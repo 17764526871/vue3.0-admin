@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 /*
  * @Description: Stay hungry，Stay foolish
  * @Author: Huccct
@@ -13,8 +14,12 @@ import 'virtual:svg-icons-register'
 import 'element-plus/theme-chalk/el-notification.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import '@/styles/index.scss'
-import router from './router'
+import 'element-plus/dist/index.css'
+import pinia from './store'
 
+import router from './router'
 const app = createApp(App)
+
 app.use(router)
+app.use(pinia)
 app.mount('#app')

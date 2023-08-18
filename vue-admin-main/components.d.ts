@@ -50,7 +50,7 @@ declare module '@vue/runtime-core' {
     ElUpload: typeof import('element-plus/es')['ElUpload']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Src: typeof import('./src/components/Category/src/index.vue')['default']
+    Src: typeof import('./src/components/SvgIcon/src/index.vue')['default']
     VerifyCode: typeof import('./src/components/VerifyCode/index.vue')['default']
   }
 }
