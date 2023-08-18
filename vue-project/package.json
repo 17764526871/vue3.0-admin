@@ -55,7 +55,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.13.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "postcss": "^8.4.23",
