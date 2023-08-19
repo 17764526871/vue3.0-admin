@@ -11,6 +11,7 @@ import { GET_TOKEN, REMOVE_TOKEN, SET_TOKEN } from '@/utils/token'
 import { defineStore } from 'pinia'
 // @ts-ignore
 import cloneDeep from 'lodash/cloneDeep'
+import { UserState } from './types/types'
 
 function filterAsyncRoute(asyncRoute: any, routes: any) {
   return asyncRoute.filter((item: any) => {
@@ -24,7 +25,7 @@ function filterAsyncRoute(asyncRoute: any, routes: any) {
 }
 
 const useUserStore = defineStore('User', {
-  state: () => {
+  state: (): UserState => {
     return {
       token: GET_TOKEN()!,
       menuRoutes: constantRoute,
@@ -50,8 +51,10 @@ const useUserStore = defineStore('User', {
     },
     async userInfo() {
       const res: userInfoResponseData = await reqUserInfo()
-
+      console.log(res)
       if (res.code === 200) {
+        console.log(3)
+    
         this.username = res.data.name as string
         this.avatar = res.data.avatar as string
         const userAsyncRoute = filterAsyncRoute(

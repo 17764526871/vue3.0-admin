@@ -5,13 +5,15 @@
  * @LastEditors: Huccct
  * @LastEditTime: 2023-05-20 10:50:25
  */
+import { MockMethod } from 'vite-plugin-mock'
+
 function createUserList() {
   return [
     {
       userId: 1,
       avatar:
         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-      username: 'admin',
+      name: 'admin',
       password: '123456',
       desc: '平台管理员',
       roles: ['平台管理员'],
@@ -23,7 +25,7 @@ function createUserList() {
       userId: 2,
       avatar:
         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-      username: 'system',
+      name: 'system',
       password: '123456',
       desc: '系统管理员',
       roles: ['系统管理员'],
@@ -44,7 +46,7 @@ export default [
       const { username, password } = body
       //调用获取用户信息函数,用于判断是否有此用户
       const checkUser = createUserList().find(
-        (item) => item.username === username && item.password === password,
+        (item) => item.name === username && item.password === password,
       )
       //没有用户返回失败信息
       if (!checkUser) {
@@ -69,7 +71,15 @@ export default [
         return { code: 201, data: { message: '获取用户信息失败' } }
       }
       //如果有返回成功信息
-      return { code: 200, data: { checkUser } }
+      return { code: 200, data: { ...checkUser } }
     },
   },
-]
+  {
+    url: '/api/user/logout',
+    method: 'post',
+    response: () => {
+      //如果有返回成功信息
+      return { code: 200, data: { message: '退出成功' } }
+    },
+  },
+] as MockMethod[]

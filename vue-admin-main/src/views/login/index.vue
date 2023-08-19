@@ -61,7 +61,6 @@
 
 <script setup lang="ts">
 import { User, Lock, Warning } from '@element-plus/icons-vue'
-
 import { getTime } from '../../utils/time'
 import { useRouter, useRoute } from 'vue-router'
 import useUserStore from '../../store/modules/user'
@@ -98,8 +97,6 @@ const validatorPassword = (rule: any, value: any, callback: any) => {
 }
 
 const validatorVerifyCode = (rule: any, value: any, callback: any) => {
-  console.log(value, identifyCode.value)
-
   if (value.length === 0) {
     callback(new Error('请输入验证码'))
   } else if (value.length < 4) {

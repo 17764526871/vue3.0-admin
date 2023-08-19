@@ -1,4 +1,4 @@
-import { withInstall } from 'element-plus/es/utils'
+import { withInstall } from '../../utils/withInstall'
 import SvgIcon from './src/index.vue'
 
 export const DefSvgIcon = withInstall(SvgIcon)

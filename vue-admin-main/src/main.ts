@@ -11,15 +11,18 @@ import App from '@/App.vue'
 // svg插件需要配置代码
 import 'virtual:svg-icons-register'
 // 引入自定义插件对象：注册整个项目全局组件
+
+import globalComponent from '@/components/index'
 import 'element-plus/theme-chalk/el-notification.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import '@/styles/index.scss'
 import 'element-plus/dist/index.css'
-import pinia from './store'
-
 import router from './router'
-const app = createApp(App)
+import pinia from './store'
+import './permission'
 
+const app = createApp(App)
+app.use(globalComponent)
 app.use(router)
 app.use(pinia)
 app.mount('#app')
