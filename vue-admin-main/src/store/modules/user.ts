@@ -51,10 +51,7 @@ const useUserStore = defineStore('User', {
     },
     async userInfo() {
       const res: userInfoResponseData = await reqUserInfo()
-      console.log(res)
       if (res.code === 200) {
-        console.log(3)
-    
         this.username = res.data.name as string
         this.avatar = res.data.avatar as string
         const userAsyncRoute = filterAsyncRoute(
