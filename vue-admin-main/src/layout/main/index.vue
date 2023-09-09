@@ -12,7 +12,6 @@ import useLayOutSettingStore from '@/store/modules/setting'
 import { watch, ref, nextTick } from 'vue'
 let layOutSettingStore = useLayOutSettingStore()
 let flag = ref(true)
-console.log( import.meta.env)
 watch(
   () => layOutSettingStore.refsh,
   () => {

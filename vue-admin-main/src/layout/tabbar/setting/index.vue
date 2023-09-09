@@ -34,7 +34,7 @@
 
     <el-dropdown>
       <span class="el-dropdown-link" style="cursor: pointer">
-        {{ userStore.username }}111
+        {{ userStore.username }}
         <el-icon class="el-icon--right">
           <arrow-down />
         </el-icon>
@@ -56,9 +56,9 @@ import {
   ArrowDown,
 } from '@element-plus/icons-vue'
 import useLayOutSettingStore from '@/store/modules/setting'
-let layoutSettingStore = useLayOutSettingStore()
 import useUserStore from '@/store/modules/user'
 import { useRouter, useRoute } from 'vue-router'
+let layoutSettingStore = useLayOutSettingStore()
 let $router = useRouter()
 let $route = useRoute()
 let userStore = useUserStore()

@@ -2,7 +2,7 @@
 defineProps({
   prefix: {
     type: String,
-    default: ' #icon-',
+    default: '#icon-',
   },
   name: String,
   color: {
@@ -21,6 +21,6 @@ defineProps({
 </script>
 <template>
   <svg :style="{ width, height }">
-    <use :xlink:herf="prefix + name" :fill="color"></use>
+    <use :xlink:href="prefix + name" :fill="color"></use>
   </svg>
 </template>

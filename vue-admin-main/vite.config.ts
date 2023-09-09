@@ -19,7 +19,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfigExport => {
   // 获取各种环境下对应的变量
-  const env = loadEnv(mode, process.cwd())
+  let env = loadEnv(mode, process.cwd())
   return {
     base: './',
     plugins: [

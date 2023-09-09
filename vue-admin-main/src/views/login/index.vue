@@ -161,7 +161,7 @@ const login = async () => {
     })
     loading.value = false
     console.log(data)
-  } catch (error) {
+  } catch (error:any) {
     loading.value = false
     ElNotification({
       type: 'error',
