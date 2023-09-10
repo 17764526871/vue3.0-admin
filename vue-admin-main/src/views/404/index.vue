@@ -1,7 +1,88 @@
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+let $router = useRouter()
+const goHome = () => {
+  $router.push('/home')
+}
+</script>
 <template>
-  <div>404 页面</div>
+  <div>
+    <p>
+      HTTP:
+      <span>404</span>
+    </p>
+    <center><a @click="goHome">HOME</a></center>
+  </div>
 </template>
+<style lang="scss" scoped>
+@import url('https://fonts.googleapis.com/css?family=Bevan');
 
-<script setup lang="ts"></script>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-<style scoped></style>
+body {
+  background: #282828;
+  overflow: hidden;
+}
+
+p {
+  font-family: 'Bevan', cursive;
+  font-size: 130px;
+  margin: 10vh 0 0;
+  text-align: center;
+  letter-spacing: 5px;
+  background-color: black;
+  color: transparent;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+}
+
+p span {
+  font-size: 1.2em;
+}
+
+code {
+  color: #bdbdbd;
+  text-align: center;
+  display: block;
+  font-size: 16px;
+  margin: 0 30px 25px;
+}
+
+code span {
+  color: #f0c674;
+}
+
+code i {
+  color: #b5bd68;
+}
+
+code em {
+  color: #b294bb;
+  font-style: unset;
+}
+
+code b {
+  color: #81a2be;
+  font-weight: 500;
+}
+
+a {
+  color: #8abeb7;
+  font-family: monospace;
+  font-size: 20px;
+  text-decoration: underline;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 880px) {
+  p {
+    font-size: 14vw;
+  }
+}</style>

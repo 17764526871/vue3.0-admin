@@ -20,8 +20,10 @@ import 'element-plus/dist/index.css'
 import router from './router'
 import pinia from './store'
 import './permission'
+import { isHasButton } from './directive/has'
 
 const app = createApp(App)
+isHasButton(app)
 app.use(globalComponent)
 app.use(router)
 app.use(pinia)

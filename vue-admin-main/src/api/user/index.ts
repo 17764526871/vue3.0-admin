@@ -1,9 +1,14 @@
 import request from '@/utils/request'
 import { LoginFormData, LoginResponseData, userInfoResponseData } from './type'
+// enum API {
+//   LOGIN_URL = '/user/login',
+//   USER_INFO_URL = '/user/info',
+//   LOGOUT_URL = '/user/logout',
+// }
 enum API {
-  LOGIN_URL = '/user/login',
-  USER_INFO_URL = '/user/info',
-  LOGOUT_URL = '/user/logout',
+  LOGIN_URL = '/admin/acl/index/login',
+  USER_INFO_URL = '/admin/acl/index/info',
+  LOGOUT_URL = '/admin/acl/index/logout',
 }
 //login 接口
 export const reqLogin = (data: LoginFormData) =>
